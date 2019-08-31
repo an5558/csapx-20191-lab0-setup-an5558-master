@@ -18,7 +18,7 @@ author: Sean Strout @ RIT CS
 author: Ayane Naito
 """
 
-import turtle       # forward, length, mainloop
+import turtle as tt    # forward, length, mainloop
 import sys          # argv
 
 def draw_square(length : int) -> None:
@@ -28,8 +28,20 @@ def draw_square(length : int) -> None:
     :return: None
     """
     for _ in range(4):
-        turtle.forward(length)
-        turtle.left(90)
+        tt.forward(length)
+        tt.left(90)
+
+def draw_doublesquare(length : int) -> None:
+    """
+    Draws two squares next to each other of a given length.
+    :param length: the length in pixels of one side of the square
+    :return: None
+    """
+    draw_square(length)
+    tt.up()
+    tt.forward(length)
+    tt.down()
+    draw_square(length)
 
 def main() -> None:
     """
@@ -45,9 +57,9 @@ def main() -> None:
         length = int(input('Enter side length: '))
 
     print('Drawing square with side length', length)
-    draw_square(length)
+    draw_doublesquare(length)
     print('Close the graphic window when done.')
-    turtle.mainloop()
+    tt.mainloop()
 
 # only run this program if it is not being imported by another main module
 if __name__ == '__main__':
