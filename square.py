@@ -15,6 +15,7 @@ $ python3 square.py
 The side length is gotten from standard input.
 
 author: Sean Strout @ RIT CS
+author: Ayane Naito
 """
 
 import turtle       # forward, length, mainloop
